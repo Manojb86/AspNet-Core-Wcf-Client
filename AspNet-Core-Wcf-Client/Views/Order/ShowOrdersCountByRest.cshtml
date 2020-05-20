@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "ShowOrdersCountByRest";
+}
+
+<h2>Show Orders Count - Call Wcf as REST call</h2>
+
+@if (string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <h3>Order Count: @ViewBag.OrdersCount</h3>
+
+    <p>Endpoint; @ViewBag.EndPointUri</p>
+    <p>Method; @ViewBag.RestMethod</p>
+}
+else
+{
+    <h4>@ViewBag.ErrorMessage</h4>
+}
+
+

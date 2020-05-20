@@ -1,0 +1,31 @@
+﻿@model List<OrderService.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Orders</h2>
+
+<div>
+    <div>
+        <a asp-controller="Order" asp-action="ShowOrdersByType">Go to Orders By Type</a>
+    </div>
+    <div>
+        <a asp-controller="Order" asp-action="ShowOrdersCountByRest">Go to orders count by REST Call</a>
+    </div>
+</div>
+
+<br />
+
+@foreach (var order in Model)
+{
+    <div>
+        <p>Order Value: @order.Value</p>
+    </div>
+
+    <div>
+        <p>Order Description: @order.Description</p>
+    </div>
+    <br />
+}
+

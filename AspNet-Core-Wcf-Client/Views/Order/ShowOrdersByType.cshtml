@@ -1,0 +1,31 @@
+﻿@model List<OrderService.Order>
+@{
+    ViewData["Title"] = "ShowOrdersByType";
+}
+
+<h2>Show Orders By Type: @ViewBag.OrderType</h2>
+<br />
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <p>Error: @ViewBag.ErrorMessage </p>
+
+}
+<br />
+
+@if (Model != null && Model.Any())
+{
+    @foreach (var order in Model)
+    {
+        <div>
+            <p>Order Value: @order.Value</p>
+        </div>
+
+        <div>
+            <p>Order Description: @order.Description</p>
+        </div>
+        <br />
+    }
+}
+
+
